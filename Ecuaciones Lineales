@@ -1,0 +1,20 @@
+%Funcion sistema de ecuaciones lineales para hallar las temperaturas y la perdida de calor.
+r2=10.025;
+r3=1.02;
+r4=0.095;
+t0=-10;
+ti=20;
+area=10;
+
+%sistema de 4 ecuaciones con 4 incognitas
+A=[-1/r1 0 0 -1;1/r2 -1/r2 0 -1;0 1/r3 -1/r3 -1;0 0 1/r4 -1];%Matriz de los Coeficientes de las ecuaciones dadas
+B=[-55.5;0;0;-26.31];%Matriz de Resultados de cada ecuacion
+AB=[A B];
+R=rref(AB);%%Funcion que halla las incognitas por medio del metodo de Gauss Jordan
+%Se imprimen las temperaturas
+t1=R(1,5)
+t2=R(2,5)
+t3=R(3,5)
+q=R(4,5)%Tasa de perdida de calor
+%La tasa total de perdida de calor en Watts
+p=q*area %%Ecuacion que relaciona la tasa de perdida de calor por unidad de area 
