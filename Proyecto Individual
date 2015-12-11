@@ -1,0 +1,99 @@
+%Funcion para hallar las unidades maximas por capacidad de hora de cada
+%maquina
+h=0;%Horas de maquina 1
+h1=0;%Horas de maquina 2
+h2=0;%Horas de maquina 3
+%Productos realizados por maquina 1
+c1=0;
+c2=0;
+c3=0;
+c4=0;
+%Productos realizados por maquina 2
+c11=0;
+c22=0;
+c33=0;
+c44=0;
+%Productos realizados por maquinas 3
+c01=0;
+c02=0;
+c03=0;
+c04=0;
+%Ciclo para la maquina 1
+while h<=40
+    h=h+1;
+    c1=c1+1;
+    if h==40
+        break
+    end
+    h=h+2;
+    c2=c2+1;
+    if h==40
+        break
+    end
+    h=h+0.5;
+    c3=c3+1;
+    if h==40
+        break
+    end
+    h=h+3;
+    c4=c4+1;
+    if h==40
+        break
+    end
+end
+%Ganancia total de la maquina 1
+g1=100*c1+150*c2+90*c3+120*c4
+
+%Ciclo para la maquina 2
+while h1<=30
+    
+    c11=c11+1;
+    if h1==30
+        break
+    end
+    h1=h1+2;
+    c22=c22+1;
+    if h1==30
+        break
+    end
+    h1=h1+4;
+    c33=c33+1;
+    if h1==30
+        break
+    end
+    h1=h1+1;
+    c44=c44+1;
+    if h1==30
+        break
+    end
+end
+
+%Ganancia total de la maquina 2
+g2=100*c11+150*c22+90*c33+120*c44
+
+%Ciclo Maquina 3
+while h2<=45
+    h2=h2+3;
+    c01=c01+1;
+    if h2==45 %Se utiliza para romper el ciclo cuando las horas llegan al limite inclusive dentro del ciclo
+        break
+    end
+    h2=h2+1;
+    c02=c02+1;
+    if h1==45
+        break
+    end
+    h2=h2+5;
+    c03=c03+1;
+    if h2==45
+        break
+    end
+    h2=h2+1;
+    c04=c04+1;
+    if h2==45
+        break
+    end
+end
+
+%Ganacia total de la maquna 3
+g3=100*c01+150*c02+90*c03+120*c04
